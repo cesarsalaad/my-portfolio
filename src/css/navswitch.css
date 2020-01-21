@@ -1,0 +1,12 @@
+/* For company/collaborator navigation */
+.logo_nav {
+  animation: nav 0.2s ease-in-out forwards;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.btn {
+  border-radius: .7em;
+}

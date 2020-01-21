@@ -1,0 +1,40 @@
+.navbar {
+  background-color: white;
+  -moz-box-shadow: 0px 2px 0.5em 1em rgb(255, 255, 255);
+  -webkit-box-shadow: 0px 2px 0.5em 1em rgb(255, 255, 255);
+  box-shadow: 0px 2px 0.5em 1em rgb(255, 255, 255);
+  background-color: white;
+}
+
+.left-nav {
+  text-align:left;
+}
+
+.right-nav {
+  text-align:right;
+}
+
+.social-row {
+  justify-content: flex-end;
+}
+
+div.navbar_container {
+  display:table;
+  width:100%;
+  table-layout: fixed;
+}
+
+div.navbar_container span {
+  display:table-cell;
+  /* border: 1px solid gray; */
+  vertical-align:middle;
+}
+
+.standard_nav {
+  animation: nav 0.2s ease-in-out forwards;
+  display: flex;
+  justify-content: space-between;
+  max-width: 30em;
+  margin: 0 auto;
+  padding: 1.5em;
+}
