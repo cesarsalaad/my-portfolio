@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <BrowserRouter basename=".">
+    <BrowserRouter basename="/my-portfolio">
       <div className="App">
         <NavBar></NavBar>
         <div className="container-sm">
