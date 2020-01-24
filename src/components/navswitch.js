@@ -13,11 +13,11 @@ class NavSwitch extends Component {
     const routes = this.props.nav_link_array;
     /* Load routes/labels to navigation links */
     const links = routes.map(({ to, label, icon }) => {
-      return <NavLink strict exact to={to} key={to}>{label}</NavLink>}
+      return <NavLink to={to} key={to}>{label}</NavLink>}
     );
     /* Load routes/components to router switch */
     const switch_links = routes.map(({ to, component }) => {
-      return <Route strict exact path={to} component={component} key={to}/>
+      return <Route path={to} component={component} key={to}/>
     }
     );
 

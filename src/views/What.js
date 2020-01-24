@@ -10,11 +10,11 @@ import GDmawo from "./GDmawo"
 
 
 
-function What() {
+const What = ({ match }) => {
   const graphicDesignNav = [
-    { to: '/SCU_Athletics', label: 'SCU Athletics', component: GDathletics, icon: "SCUAthleticsIcon" },
-    { to: '/SHPE_SCU', label: 'SHPE SCU', component: GDshpe, icon: "SHPEIcon" },
-    { to: '/MAWO_GO_STREAM_HIS_GREAT_MUSIC_PLS', label: 'MAWO', component: GDmawo, icon: "MawoIcon" }
+    { to: `${match.url}/SCU_Athletics`, label: 'SCU Athletics', component: GDathletics, icon: "SCUAthleticsIcon" },
+    { to: `${match.url}/SHPE_SCU`, label: 'SHPE SCU', component: GDshpe, icon: "SHPEIcon" },
+    { to: `${match.url}/MAWO_GO_STREAM_HIS_GREAT_MUSIC_PLS`, label: 'MAWO', component: GDmawo, icon: "MawoIcon" }
   ]
 
   return (

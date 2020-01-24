@@ -9,22 +9,20 @@ import DigitalGallery from "../components/graphicDesign/SCU_Athletics/digitalGal
 import BrandingDetail from "../components/graphicDesign/SCU_Athletics/brandingDetail"
 import MotionGraphicsGallery from "../components/graphicDesign/SCU_Athletics/motionGraphicsGallery"
 
-class GDathletics extends Component {
-  render() {
+const GDathletics = ({ match }) => {
     const athleticsGraphicDesignNav = [
-      { to: '/SC_Print', label: 'Print', component: PrintGallery },
-      { to: '/SC_Digital', label: 'Digital', component: DigitalGallery },
-      { to: '/SC_Branding', label: 'Branding', component: BrandingDetail },
-      { to: '/SC_MotionGraphics', label: 'Motion Graphics', component: MotionGraphicsGallery }
-    ]
+      { to: `${match.url}/SC_Print`, label: 'Print', component: PrintGallery },
+      { to: `${match.url}/SC_Digital`, label: 'Digital', component: DigitalGallery },
+      { to: `${match.url}/SC_Branding`, label: 'Branding', component: BrandingDetail },
+      { to: `${match.url}/SC_MotionGraphics`, label: 'Motion Graphics', component: MotionGraphicsGallery }
+    ];
     return (
       <BrowserRouter>
-      <div className="view">
-        <NavSwitch nav_link_array={athleticsGraphicDesignNav} className="standard_nav"/>
-      </div>
+        <div className="view">
+          <NavSwitch nav_link_array={athleticsGraphicDesignNav} className="standard_nav"/>
+        </div>
       </BrowserRouter>
     );
   }
-}
 
 export default GDathletics
