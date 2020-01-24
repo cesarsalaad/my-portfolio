@@ -18,7 +18,6 @@ const What = ({ match }) => {
   ]
 
   return (
-    <BrowserRouter>
         <div className="container-sm">
           <div className="py-4">
             <h1 className="display-2 text-center">Graphic Design</h1>
@@ -27,8 +26,6 @@ const What = ({ match }) => {
           </div>
           <SvgNavSwitch nav_link_array={graphicDesignNav} className="logo_nav"/>
         </div>
-    </BrowserRouter>
-
   );
 }
 
