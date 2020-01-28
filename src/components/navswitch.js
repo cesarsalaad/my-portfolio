@@ -17,7 +17,7 @@ class NavSwitch extends Component {
     );
     /* Load routes/components to router switch */
     const switch_links = routes.map(({ to, component }) => {
-      return <Route path={to} component={component} key={to}/>
+      return <Route path={process.env.PUBLIC_URL + to} component={component} key={to}/>
     }
     );
 
