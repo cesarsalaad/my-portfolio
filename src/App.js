@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <BrowserRouter basename="/my-portfolio">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <NavBar></NavBar>
         <div className="container-sm">
