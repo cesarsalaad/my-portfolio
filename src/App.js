@@ -2,7 +2,7 @@ import React from 'react';
 //My additions
 import NavBar from "./components/navbar"
 // React Router import
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 
 
@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <div className="App">
         <NavBar></NavBar>
         <div className="container-sm">
@@ -18,7 +18,7 @@ function App() {
           </div>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
 
   );
 }
