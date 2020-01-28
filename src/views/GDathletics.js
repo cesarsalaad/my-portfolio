@@ -17,11 +17,9 @@ const GDathletics = ({ match }) => {
       { to: `${match.url}/SC_MotionGraphics`, label: 'Motion Graphics', component: MotionGraphicsGallery }
     ];
     return (
-      <BrowserRouter>
         <div className="view">
           <NavSwitch nav_link_array={athleticsGraphicDesignNav} className="standard_nav"/>
         </div>
-      </BrowserRouter>
     );
   }
 

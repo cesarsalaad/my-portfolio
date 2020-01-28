@@ -1,8 +1,6 @@
 import React from 'react';
 //My additions
 import SvgNavSwitch from "../components/svgnavswitch"
-// React Router import
-import { BrowserRouter } from 'react-router-dom'
 // Route view imports
 import GDathletics from "./GDathletics"
 import GDshpe from "./GDshpe"
