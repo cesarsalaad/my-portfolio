@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 // My additions
 import NavSwitch from "../components/navswitch"
-// React Router import
-import { BrowserRouter } from 'react-router-dom'
 // Route view imports
 import PrintGallery from "../components/graphicDesign/SCU_Athletics/printGallery"
 import DigitalGallery from "../components/graphicDesign/SCU_Athletics/digitalGallery"

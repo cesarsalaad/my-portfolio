@@ -63,9 +63,9 @@ class NavBar extends Component {
         </div>
         </nav>
           <switch>
-            <Route exact path={process.env.PUBLIC_URL + '/'} component={Who}/>
-            <Route path={process.env.PUBLIC_URL + '/What'} component={What}/>
-            <Route path={process.env.PUBLIC_URL + '/How'} component={How}/>
+            <Route exact path="/" component={Who}/>
+            <Route path="/What" component={What}/>
+            <Route path="/How" component={How}/>
           </switch>
         </>
     );
