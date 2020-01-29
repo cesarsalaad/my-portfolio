@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
+
+// Material Design
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 import './index.css';
 import App from './App';

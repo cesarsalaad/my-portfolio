@@ -12,62 +12,70 @@ import LinkedinIcon from "./icons/linkedin";
 
 // Custom Styles import
 import '../css/navbar.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'
+// Material Design
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
+MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBContainer, MDBIcon } from "mdbreact";
 
 class NavBar extends Component {
+  state = {
+  collapse1: false,
+  collapseID: ''
+  }
+
+  toggleCollapse = collapseID => () => {
+    this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
+  }
+
+  toggleSingleCollapse = collapseId => {
+    this.setState({
+      ...this.state,
+      [collapseId]: !this.state[collapseId]
+    });
+  }
   render() {
     return (
       <>
-        <nav className="navbar navbar-expand-md sticky-top navbar-light nav-justified">
-        <div className="container">
-          <div className="navbar_container">
-            <span className="left-nav">
-                <Navbar.Brand><h1 className={"navbar-brand"}>CLT</h1></Navbar.Brand>
-            </span>
-            <Navbar.Collapse id="responsive-navbar-nav">
+      <MDBNavbar color="secondary-color" dark expand="md" style={{ marginTop: "20px" }}>
+        <MDBContainer>
+          <MDBNavbarBrand>
+            <strong className="white-text">CLT</strong>
+          </MDBNavbarBrand>
+          <MDBNavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
+          <MDBCollapse id="navbarCollapse3" isOpen={this.state.collapseID} navbar>
+            <MDBNavbarNav right>
+              <MDBNavItem active>
+                <MDBNavLink to='/'>Who</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to='/What'>What</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBNavLink to='/How'>How</MDBNavLink>
+              </MDBNavItem>
+            </MDBNavbarNav>
+            <MDBNavbarNav right>
+              <MDBNavItem>
+                <MDBDropdown>
+                  <MDBDropdownToggle className="dopdown-toggle" nav>
+                    MENU
+                  </MDBDropdownToggle>
+                  <MDBDropdownMenu className="dropdown-default" right>
+                    <MDBDropdownItem href="#!">My account</MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Log out</MDBDropdownItem>
+                  </MDBDropdownMenu>
+                </MDBDropdown>
+              </MDBNavItem>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
 
-              <span>
-                <Nav className={"standard_nav"}>
-                    <Nav.Link><NavLink to='/'>Who</NavLink></Nav.Link>
-                    <Nav.Link><NavLink to='/What'>What</NavLink></Nav.Link>
-                    <Nav.Link><NavLink to='/How'>How</NavLink></Nav.Link>
-                </Nav>
-              </span>
-            </Navbar.Collapse>
-
-              <span className="right-nav">
-                <div className="d-flex social-row">
-                  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                  <Navbar.Collapse id="responsive-navbar-nav">
-                  <div className="p-1">
-                    <a href="http://www.instagram.com/cesarsalaad" target="_blank">
-                      <InstagramIcon width={40} />
-                    </a>
-                  </div>
-                  <div className="p-1">
-                    <a href="#" target="_blank">
-                      <GithubIcon width={40} />
-                    </a>
-                  </div>
-                  <div className="p-1">
-                    <a href="#" target="_blank">
-                      <LinkedinIcon width={40} />
-                    </a>
-                  </div>
-                  </Navbar.Collapse>
-                </div>
-              </span>
-
-          </div>
-        </div>
-        </nav>
-          <switch>
-            <Route exact path="/" component={Who}/>
-            <Route path="/What" component={What}/>
-            <Route path="/How" component={How}/>
-          </switch>
-        </>
+        <switch>
+          <Route exact path="/" component={Who}/>
+          <Route path="/What" component={What}/>
+          <Route path="/How" component={How}/>
+        </switch>
+      </>
     );
   }
 }
