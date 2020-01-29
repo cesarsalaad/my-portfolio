@@ -38,3 +38,11 @@ div.navbar_container span {
   margin: 0 auto;
   padding: 1.5em;
 }
+
+#WhoLink:hover {
+  display: none;
+}
+
+#WhoLink:hover:before {
+  content: "Who am I";
+}
