@@ -1,3 +1,6 @@
+.what:hover:after {
+  content: " _____ Work Have I Done";
+}
 
 .navbar {
 background-color: white;
