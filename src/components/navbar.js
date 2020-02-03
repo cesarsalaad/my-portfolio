@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 // React Router import
 import { Route, Switch, NavLink } from 'react-router-dom'
 // Route view imports
@@ -20,96 +20,76 @@ import { HamburgerSpin } from 'react-animated-burgers'
 
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
-import Card from 'react-bootstrap/Card';
-import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button';
-
-class MenuWrap extends Component {
-
-  constructor (props) {
-    super(props);
-    this.state = {
-      hidden: false
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const sideChanged = this.props.children.props.right !== nextProps.children.props.right;
-
-    if (sideChanged) {
-      this.setState({hidden : true});
-
-      setTimeout(() => {
-        this.show();
-      }, this.props.wait);
-    }
-  }
-
-  show() {
-    this.setState({hidden : false});
-  }
-
-  render() {
-    let style;
-
-    if (this.state.hidden) {
-      style = {display: 'none'};
-    }
-
-    return (
-      <div style={style}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+import Collapse from 'react-bootstrap/Collapse';
 
 class NavBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      // Burger Menu
-      menuOpen: false,
       // Burger Button
-      isActive: false
+      isActive: false,
+      // Collapse menu
+      open: false,
+      setOpen: false
     }
   }
 
   toggleButton = () => {
     // Burger Button
     this.setState({
-      isActive: !this.state.isActive
+      isActive: !this.state.isActive,
+      open: !this.state.open,
+      setOpen: !this.state.setOpen
     })
-    // Burger Menu
-    this.toggleMenu()
   }
 
-  // This keeps your state in sync with the opening/closing of the menu
-  // via the default means, e.g. clicking the X, pressing the ESC key etc.
-  handleStateChange (state) {
-    this.setState({menuOpen: state.isOpen})
-    this.setState({isActive: state.isOpen})
-  }
-
-  // This can be used to toggle the menu, e.g. when using a custom icon
-  // Tip: You probably want to hide either/both default icons if using a custom icon
-  // See https://github.com/negomi/react-burger-menu#custom-icons
-  toggleMenu () {
-    this.setState(state => ({menuOpen: !state.menuOpen}))
-  }
   render() {
-    const Menu = BurgerMenu['stack'];
     return (
       <>
-      <div id="outer-container">
       <nav className="navbar sticky-top">
         <div className="container">
+          <Collapse in={this.state.open}>
+            <div id="example-fade-text">
+              <div className="py-5">
+                    <NavLink to='/'>
+                      <h1 className="menu-items Display-1">
+                        Who
+                      </h1>
+                    </NavLink>
+
+                    <h1 className="menu-items Display-1">
+                      <a className="what">What</a>
+                    </h1>
+
+                    <NavLink to='/GraphicDesign'>
+                      <h1 className="menu-items Display-2">
+                        <i className="fas fa-pencil-ruler"></i>
+                        Graphic Design
+                      </h1>
+                    </NavLink>
+                    <NavLink to='/Software'>
+                      <h1 className="menu-items Display-2">
+                        <i class="far fa-file-code"></i>
+                        Software
+                      </h1>
+                    </NavLink>
+
+                    <NavLink to='/How'>
+                      <h1 className="menu-items Display-1">
+                        How
+                      </h1>
+                    </NavLink>
+              </div>
+            </div>
+          </Collapse>
           <div className="navbar_container">
             <span className="left-nav">
-              <h1 className="display-2 navbar-brand">CLT</h1>
+              <h1 className="">CLT</h1>
             </span>
             <span className="right-nav">
               <HamburgerSpin
+                aria-controls="example-fade-text"
+                aria-expanded={this.state.open}
                 toggleButton={this.toggleButton}
                 isActive={this.state.isActive}
               />
@@ -117,66 +97,12 @@ class NavBar extends Component {
           </div>
         </div>
       </nav>
-      <MenuWrap wait={20}>
-        <Menu
-          right
-          id='stack'
-          pageWrapId={'page-wrap'}
-          outerContainerId={'outer-container'}
-          customBurgerIcon={ false }
-          customCrossIcon={ false }
-          isOpen={this.state.menuOpen}
-          onStateChange={(state) => this.handleStateChange(state)}
-        >
-          <Accordion>
-            <Card>
-              <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                  <NavLink to='/'>Who</NavLink>
-                </Accordion.Toggle>
-              </Card.Header>
-            </Card>
-            <Card>
-              <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                  <a className="what">What</a>
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey="1">
-                <Card.Body>
-                  <NavLink className="dropdown-item" to='/GraphicDesign'>
-                    <i className="fas fa-pencil-ruler"></i>
-                    Graphic Design
-                  </NavLink>
-                  <NavLink className="dropdown-item" to='/Software'>
-                    <i class="far fa-file-code"></i>
-                     Software
-                  </NavLink>
-                </Card.Body>
-
-              </Accordion.Collapse>
-            </Card>
-            <Card>
-              <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                  <NavLink to='/How'>How</NavLink>
-                </Accordion.Toggle>
-              </Card.Header>
-            </Card>
-          </Accordion>
-
-        </Menu>
-      </MenuWrap>
-
-        <main id="page-wrap">
           <switch>
             <Route exact path="/" component={Who}/>
             <Route path="/GraphicDesign" component={GraphicDesign}/>
             <Route path="/Software" component={Software}/>
             <Route path="/How" component={How}/>
           </switch>
-        </main>
-      </div>
       </>
     );
   }

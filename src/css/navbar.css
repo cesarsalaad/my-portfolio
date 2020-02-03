@@ -1,5 +1,12 @@
-.what:hover:after {
-  content: " _____ Work Have I Done";
+.menu-items {
+  font-size: 5em;
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .menu-items {
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+  }
 }
 
 .navbar {
@@ -41,12 +48,4 @@ div.navbar_container span {
   max-width: 30em;
   margin: 0 auto;
   padding: 1.5em;
-}
-
-#WhoLink:hover {
-  display: none;
-}
-
-#WhoLink:hover:before {
-  content: "Who am I";
 }

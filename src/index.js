@@ -5,8 +5,16 @@ import ReactDOM from 'react-dom';
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import './css/burgermenu.css';
+
+import './fonts/source-sans-pro-release/source-sans-pro.css';
+import './fonts/source-sans-pro-release/source-sans-variable.css';
+
+import './fonts/Lato/latofonts.css';
+import './fonts/Lato/latostyle.css';
 
 import './index.css';
 import App from './App';
