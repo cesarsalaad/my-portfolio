@@ -46,7 +46,7 @@ class NavBar extends Component {
   render() {
     return (
       <>
-      <nav className="navbar sticky-top">
+      <nav id="main-navbar" className="navbar sticky-top">
         <div className="container">
           <Collapse in={this.state.open}>
             <div id="example-fade-text">
