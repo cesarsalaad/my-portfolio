@@ -6,6 +6,7 @@ import Who from "../views/Who"
 import What from "../views/What"
 import GraphicDesign from "../views/graphicDesign"
 import Software from "../views/software"
+import Photography from "../views/photography"
 import How from "../views/How"
 
 import InstagramIcon from "./icons/instagram";
@@ -52,30 +53,33 @@ class NavBar extends Component {
             <div id="example-fade-text">
               <div className="py-5">
                     <NavLink to='/'>
-                      <h1 className="menu-items Display-1">
+                      <h1 className="nav-outline-type menu-items Display-1">
                         Who
                       </h1>
                     </NavLink>
 
-                    <h1 className="menu-items Display-1">
+                    <h1 className="nav-outline-type menu-items Display-1">
                       <a className="what">What</a>
                     </h1>
 
                     <NavLink to='/GraphicDesign'>
-                      <h1 className="menu-items Display-2">
-                        <i className="fas fa-pencil-ruler"></i>
-                        Graphic Design
-                      </h1>
+                      <h3 className="nav-outline-type sub-menu-items">
+                        • Graphic Design
+                      </h3>
                     </NavLink>
                     <NavLink to='/Software'>
-                      <h1 className="menu-items Display-2">
-                        <i class="far fa-file-code"></i>
-                        Software
-                      </h1>
+                      <h3 className="nav-outline-type sub-menu-items">
+                        • Software
+                      </h3>
+                    </NavLink>
+                    <NavLink to='/Photography'>
+                      <h3 className="nav-outline-type sub-menu-items">
+                        • Photography
+                      </h3>
                     </NavLink>
 
                     <NavLink to='/How'>
-                      <h1 className="menu-items Display-1">
+                      <h1 className="nav-outline-type menu-items Display-1">
                         How
                       </h1>
                     </NavLink>
@@ -97,12 +101,13 @@ class NavBar extends Component {
           </div>
         </div>
       </nav>
-          <switch>
+          <Switch>
             <Route exact path="/" component={Who}/>
             <Route path="/GraphicDesign" component={GraphicDesign}/>
             <Route path="/Software" component={Software}/>
+            <Route path="/Photography" component={Photography}/>
             <Route path="/How" component={How}/>
-          </switch>
+          </Switch>
       </>
     );
   }

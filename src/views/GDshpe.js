@@ -6,10 +6,9 @@ import BrandingDetail from "../components/graphicDesign/SHPE_SCU/brandingDetail"
 import MotionGraphicsGallery from "../components/graphicDesign/SHPE_SCU/motionGraphicsGallery"
 // Lottie
 import * as lottie from 'lottie-web/build/player/lottie.js'
-import animationData from '../lotties/shpe_logo_animation/shpe_logo_animation_data.json'
+import animationData from '../lotties/shpe_logo_animation_data.json'
 
 class GDshpe extends Component {
-
   constructor (props) {
     super(props)
     this.state = {
