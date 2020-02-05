@@ -50,49 +50,46 @@ class NavBar extends Component {
       <nav id="main-navbar" className="navbar sticky-top">
         <div className="container">
           <Collapse in={this.state.open}>
-            <div id="example-fade-text">
-              <div className="py-5">
-                    <NavLink to='/'>
-                      <h1 className="nav-outline-type menu-items Display-1">
-                        Who
-                      </h1>
-                    </NavLink>
+            <div id="navbar-collapse">
+              <div className="py-5" >
 
-                    <h1 className="nav-outline-type menu-items Display-1">
-                      <a className="what">What</a>
-                    </h1>
+                  <div className="menu-items">
+                    <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1">
+                        <span id="who-link">Who</span>
+                        <span id="who-link-expanded">Who I Am</span>
+                    </NavLink>
+                  </div>
+                  <div className="sub-menu-items">
+                    <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1">
+                        <span>• Graphic Designer</span>
+                    </NavLink>
+                  </div>
+                  <div className="sub-menu-items">
+                    <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type">
+                        <span>• Software Developer</span>
+                    </NavLink>
+                  </div>
+                  <div className="sub-menu-items">
+                    <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type">
+                        <span>• Photographer</span>
+                    </NavLink>
+                  </div>
+                  <div className="menu-items">
+                    <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1">
+                        <span>Contact</span>
+                    </NavLink>
+                  </div>
 
-                    <NavLink to='/GraphicDesign'>
-                      <h3 className="nav-outline-type sub-menu-items">
-                        • Graphic Design
-                      </h3>
-                    </NavLink>
-                    <NavLink to='/Software'>
-                      <h3 className="nav-outline-type sub-menu-items">
-                        • Software
-                      </h3>
-                    </NavLink>
-                    <NavLink to='/Photography'>
-                      <h3 className="nav-outline-type sub-menu-items">
-                        • Photography
-                      </h3>
-                    </NavLink>
-
-                    <NavLink to='/How'>
-                      <h1 className="nav-outline-type menu-items Display-1">
-                        How
-                      </h1>
-                    </NavLink>
               </div>
             </div>
           </Collapse>
           <div className="navbar_container">
             <span className="left-nav">
-              <h1 className="">CLT</h1>
+              <h1 id="nav-brand">CLT</h1>
             </span>
             <span className="right-nav">
               <HamburgerSpin
-                aria-controls="example-fade-text"
+                aria-controls="navbar-collapse"
                 aria-expanded={this.state.open}
                 toggleButton={this.toggleButton}
                 isActive={this.state.isActive}

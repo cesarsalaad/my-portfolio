@@ -1,18 +1,35 @@
 TODO
--use airbnb lottie -> css animation for SHPE branding
+-Navbar auto-close
+-Navbar text styles/animations
+-Route transition animations
+-LOTS OF CONTENT TO UPLOAD
+-case studies for software projects
+-photo shoot of arduino light controller
+-indicate what skills used for each project
+-footer?
 
 DONE but check
--
+-Responsive burger Button
+  -might lock x below viewport making it impossible to exit
 
-DONE compromises
--CSS gaussian blur main navbar background
-  -White box shadow under navbar limit
+DONE w/ compromises
+-css gaussian blur main navbar background
+  -white box shadow under navbar limit
 -import Avenir Next
-  -Check how font licensing works
+  -check how font licensing works
+  -using Source-Sans-Pro instead
+-chocolat image viewer
+  -need to safely/efficiently use jquery/learn why jquery is not recommended with react
+  -using react-grid-gallery with lightbox
+  -do performance tests on individual chocolat objects
 
 DONE forsure
 -create routes
 -install react router dom
+-use airbnb lottie -> css animation for SHPE branding
+-attatched scroll control to lotties
+-mimicked airpods website scroll animations
+-tested Flickr hosting
 
 
 // NAV BLOCK WITH SVG ICONS and button sub-categories
