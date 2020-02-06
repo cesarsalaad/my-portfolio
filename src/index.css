@@ -14,6 +14,10 @@
   margin: auto;
 }
 
+p {
+  font-size: 1.5em;
+}
+
 body {
   margin: 0;
   font-family: 'Source Sans Pro' ,'Lato', 'Droid Sans', 'Helvetica Neue',

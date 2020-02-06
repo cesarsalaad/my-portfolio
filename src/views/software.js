@@ -92,24 +92,87 @@ class Software extends Component {
             <div id="bodymovin" className="medium-lottie"></div>
           </div>
           <div className="container-sm">
-            <h1 className="display-3">
-              Notes Organizer for the Visually Impaired
-            </h1>
-            <div className="py-4">
-              <h3>
-                Project Details:
-              </h3>
-              <p className="lead">
-                <b>Duration:</b> 1 year <br/>
-                <b>Roles:</b> UI Designer, iOS Developer <br/>
-                <b>Tools Used:</b> XCode, Git, Adobe XD, Adobe Illustrator <br/>
-                <b>Tested on:</b> iPhone 8 Plus & iPhone X
-              </p>
-            </div>
-            <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </h3>
-            <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </h3>
+            <section>
+              <h1 className="display-3">
+                Notes Organizer for the Visually Impaired
+              </h1>
+
+              <div className="py-5">
+                <h3>
+                  Project Details:
+                </h3>
+                <p className="lead">
+                  <b>Duration:</b> 1 year <br/>
+                  <b>Roles:</b> UI Designer, iOS Developer <br/>
+                  <b>Tools Used:</b> XCode, Git, Adobe XD, Adobe Illustrator <br/>
+                  <b>Tested on:</b> iPhone 8 Plus & iPhone X <br/>
+                  <b>Teammates:</b> Axel Perez <br/>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <div className="py-3">
+                <h2>
+                  The Problem
+                </h2>
+                <p>
+                  Visually impaired students face extra challenges when it comes to the basic necessity of note-taking. Current assistive technology is fragmented in function. These students often need to combine solutions such as voice recording lectures,hiring someone to transcribe notes to braille, hiring a reader, etc. The amount of time and money they need for these solutions proves to be a great disadvantage, and we wish to provide an easier solution that will give these students a more independent and productive learning experience.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <div className="py-3">
+                <h2>
+                  Our Goal
+                </h2>
+                <p>
+                  Our solution is an application that can offer intuitive, convenient, and comprehensive access to notes for the visually impaired. We would implement our solution through an iOS mobile application that would allow users to upload handwritten or text notes so that they could be organized and accessed through voice prompts. Users with visual disabilities would then have a platform to store and organize their notes in order to make it easier to learn independently.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <div className="py-3">
+                <h2>
+                  My Process
+                </h2>
+                <p>
+                  I saw this project as an opportunity to put my interest in UX into practice. In an accessibility app, usability  My first instinct was to take my notes from the Nielsen Norman GroupDespite primarily looking at these quality components in the context of visual interfaces, the principle intentions remain the same
+                </p>
+                <h4>
+                  Research
+                </h4>
+                <h4>
+                  Wireframes
+                </h4>
+                <h4>
+                  Final Prototype
+                </h4>
+              </div>
+            </section>
+
+            <section>
+              <div className="py-3">
+                <h2>
+                  Next Steps
+                </h2>
+                <p>
+                  I saw this project as an opportunity to put my interest in UX into practice. In an accessibility app, usability  My first instinct was to take my notes from the Nielsen Norman GroupDespite primarily looking at these quality components in the context of visual interfaces, the principle intentions remain the same
+                </p>
+                <h4>
+                  Research
+                </h4>
+                <h4>
+                  Wireframes
+                </h4>
+                <h4>
+                  Final Prototype
+                </h4>
+              </div>
+            </section>
+
           </div>
       </>
     );

@@ -16,14 +16,21 @@ import LinkedinIcon from "./icons/linkedin";
 // Custom Styles import
 import '../css/navbar.css';
 
-import BurgerMenu from 'react-burger-menu';
+// Burger Menu
 import { HamburgerSpin } from 'react-animated-burgers'
 
+// React-Bootstrap
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
 import Collapse from 'react-bootstrap/Collapse';
 
+// React Scroll Lock (To lock scrolling when navbar is active)
+// 1. Import the functions
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
 class NavBar extends Component {
+
+  // States for expanding/collapsing navbar menu
   constructor (props) {
     super(props)
     this.state = {
@@ -35,6 +42,40 @@ class NavBar extends Component {
     }
   }
 
+  // Element that will maintain scroll ability when navbar is expanded
+  targetScrollElement = null;
+
+  // More body scroll settings to mount/unmount appropriately
+  componentDidMount() {
+    // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
+    // Specifically, the target element is the one we would like to allow scroll on (NOT a parent of that element).
+    // This is also the element to apply the CSS '-webkit-overflow-scrolling: touch;' if desired.
+    this.targetElement = document.querySelector('#main-navbar');
+  }
+
+  showTargetElement = () => {
+    // ... some logic to show target element
+
+    // 3. Disable body scroll
+    disableBodyScroll(this.targetElement);
+  };
+
+  hideTargetElement = () => {
+    // ... some logic to hide target element
+
+    // 4. Re-enable body scroll
+    enableBodyScroll(this.targetElement);
+  }
+
+  componentWillUnmount() {
+    // 5. Useful if we have called disableBodyScroll for multiple target elements,
+    // and we just want a kill-switch to undo all that.
+    // OR useful for if the `hideTargetElement()` function got circumvented eg. visitor
+    // clicks a link which takes him/her to a different page within the app.
+    clearAllBodyScrollLocks();
+  }
+
+  // Function sets state to open/close, matching the burger animation with the appropriate state
   toggleButton = () => {
     // Burger Button
     this.setState({
@@ -42,6 +83,12 @@ class NavBar extends Component {
       open: !this.state.open,
       setOpen: !this.state.setOpen
     })
+    if (this.state.open) {
+      this.showTargetElement();
+    }
+    else {
+      this.hideTargetElement();
+    }
   }
 
   render() {
@@ -85,7 +132,7 @@ class NavBar extends Component {
           </Collapse>
           <div className="navbar_container">
             <span className="left-nav">
-              <h1 id="nav-brand">CLT</h1>
+              <h1 id="nav-brand">Cesar Luis Tesen</h1>
             </span>
             <span className="right-nav">
               <HamburgerSpin

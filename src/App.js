@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 //My additions
 import NavBar from "./components/navbar"
 // React Router import
@@ -6,21 +6,20 @@ import { HashRouter } from 'react-router-dom'
 
 
 
-function App() {
-
-
-  return (
-    <HashRouter>
-      <div className="App">
-        <NavBar></NavBar>
-        <div className="container-sm">
-          <div className="py-4">
+class App extends Component {
+  render() {
+    return (
+      <HashRouter>
+        <div className="App">
+          <NavBar></NavBar>
+          <div className="container-sm">
+            <div className="py-4">
+            </div>
           </div>
         </div>
-      </div>
-    </HashRouter>
-
-  );
+      </HashRouter>
+    );
+  }
 }
 
 export default App;

@@ -1,5 +1,4 @@
 TODO
--Navbar auto-close
 -Navbar text styles/animations
 -Route transition animations
 -LOTS OF CONTENT TO UPLOAD
@@ -7,6 +6,7 @@ TODO
 -photo shoot of arduino light controller
 -indicate what skills used for each project
 -footer?
+-cards for each software project
 
 DONE but check
 -Responsive burger Button
@@ -30,6 +30,7 @@ DONE forsure
 -attatched scroll control to lotties
 -mimicked airpods website scroll animations
 -tested Flickr hosting
+-Navbar auto-close
 
 
 // NAV BLOCK WITH SVG ICONS and button sub-categories
