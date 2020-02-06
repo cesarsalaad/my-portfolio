@@ -54,28 +54,28 @@ class NavBar extends Component {
               <div className="py-5" >
 
                   <div className="menu-items">
-                    <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1">
+                    <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1 " onClick={this.toggleButton}>
                         <span id="who-link">Who</span>
                         <span id="who-link-expanded">Who I Am</span>
                     </NavLink>
                   </div>
                   <div className="sub-menu-items">
-                    <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1">
+                    <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1" onClick={this.toggleButton}>
                         <span>• Graphic Designer</span>
                     </NavLink>
                   </div>
                   <div className="sub-menu-items">
-                    <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type">
+                    <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type" onClick={this.toggleButton}>
                         <span>• Software Developer</span>
                     </NavLink>
                   </div>
                   <div className="sub-menu-items">
-                    <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type">
+                    <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type" onClick={this.toggleButton}>
                         <span>• Photographer</span>
                     </NavLink>
                   </div>
                   <div className="menu-items">
-                    <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1">
+                    <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
                         <span>Contact</span>
                     </NavLink>
                   </div>
