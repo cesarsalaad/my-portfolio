@@ -86,6 +86,7 @@ class Software extends Component {
   render() {
     return (
       <>
+        <body>
           <div id="lottie-wrapper">
             <h1 className="display-2 text-center">Software</h1>
             <h3 className="text-center">These are my software projects, behold.</h3>
@@ -161,19 +162,11 @@ class Software extends Component {
                 <p>
                   I saw this project as an opportunity to put my interest in UX into practice. In an accessibility app, usability  My first instinct was to take my notes from the Nielsen Norman GroupDespite primarily looking at these quality components in the context of visual interfaces, the principle intentions remain the same
                 </p>
-                <h4>
-                  Research
-                </h4>
-                <h4>
-                  Wireframes
-                </h4>
-                <h4>
-                  Final Prototype
-                </h4>
               </div>
             </section>
 
           </div>
+        </body>
       </>
     );
   }

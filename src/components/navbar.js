@@ -83,7 +83,7 @@ class NavBar extends Component {
       open: !this.state.open,
       setOpen: !this.state.setOpen
     })
-    if (this.state.open) {
+    if (!this.state.open) {
       this.showTargetElement();
     }
     else {
@@ -132,7 +132,7 @@ class NavBar extends Component {
           </Collapse>
           <div className="navbar_container">
             <span className="left-nav">
-              <h1 id="nav-brand">Cesar Luis Tesen</h1>
+              <h1 id="nav-brand">CLT</h1>
             </span>
             <span className="right-nav">
               <HamburgerSpin
