@@ -25,6 +25,12 @@ a:hover #who-link-expanded { display: inline; }
 a.is-active #who-link { display: none; }
 a.is-active #who-link-expanded { display: inline; }
 
+a #how-link-expanded { display: none; }
+a:hover #how-link { display: none; }
+a:hover #how-link-expanded { display: inline; }
+a.is-active #how-link { display: none; }
+a.is-active #how-link-expanded { display: inline; }
+
 @supports (-webkit-text-stroke: 1px gray) {
   .nav-outline-type {
     -webkit-text-stroke: 1px gray;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //My additions
+import Gallery from 'react-grid-gallery';
 
 // Lottie
 import * as lottie from 'lottie-web/build/player/lottie.js'
@@ -84,6 +85,28 @@ class Software extends Component {
   };
 
   render() {
+    const IMAGES =
+    [{
+            src: "https://live.staticflickr.com/65535/49429686826_06b80c7092_k.jpg",
+            thumbnail: "https://live.staticflickr.com/65535/49429686826_2bf98bda68.jpg",
+            thumbnailWidth: 400,
+            thumbnailHeight: 200,
+            caption: "Main Menu"
+    },
+    {
+            src: "https://live.staticflickr.com/65535/49429179698_e7d331bb43_k.jpg",
+            thumbnail: "https://live.staticflickr.com/65535/49429179698_b281c76203.jpg",
+            thumbnailWidth: 400,
+            thumbnailHeight: 200,
+            caption: "Scan Notes Example"
+    },
+    {
+            src: "https://live.staticflickr.com/65535/49429878607_3990f06698_k.jpg",
+            thumbnail: "https://live.staticflickr.com/65535/49429878607_45cc46633c.jpg",
+            thumbnailWidth: 400,
+            thumbnailHeight: 200,
+            caption: "Explore Mavodatopmp Example"
+    }]
     return (
       <>
         <body>
@@ -151,6 +174,7 @@ class Software extends Component {
                 <h4>
                   Final Prototype
                 </h4>
+                <Gallery images={IMAGES} rowHeight="200" enableImageSelection={false}/>
               </div>
             </section>
 

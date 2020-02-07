@@ -123,7 +123,8 @@ class NavBar extends Component {
                   </div>
                   <div className="menu-items">
                     <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                        <span>Contact</span>
+                        <span id="how-link">How</span>
+                        <span id="how-link-expanded">How To Contact Me</span>
                     </NavLink>
                   </div>
 
