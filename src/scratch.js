@@ -1,10 +1,7 @@
 TODO
--Navbar text styles/animations
--Route transition animations
 -LOTS OF CONTENT TO UPLOAD
 -case studies for software projects
 -photo shoot of arduino light controller
--indicate what skills used for each project
 -footer?
 -cards for each software project
 
@@ -22,6 +19,10 @@ DONE w/ compromises
   -need to safely/efficiently use jquery/learn why jquery is not recommended with react
   -using react-grid-gallery with lightbox
   -do performance tests on individual chocolat objects
+-Navbar text styles/animations
+  - Still debating what makes sense animating/how many links and what each should have
+-Route transition animations
+  - Show/Hide Navbar Menu transitions help smoothen the experience
 
 DONE forsure
 -create routes
@@ -31,6 +32,12 @@ DONE forsure
 -mimicked airpods website scroll animations
 -tested Flickr hosting
 -Navbar auto-close
+-indicate what skills used for each project
+
+
+
+
+
 
 
 // NAV BLOCK WITH SVG ICONS and button sub-categories

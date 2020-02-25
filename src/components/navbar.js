@@ -19,10 +19,8 @@ import '../css/navbar.css';
 // Burger Menu
 import { HamburgerSpin } from 'react-animated-burgers'
 
-// React-Bootstrap
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Nav from 'react-bootstrap/Nav';
-import Collapse from 'react-bootstrap/Collapse';
+// React Page Transition
+import { PageTransition } from '@steveeeie/react-page-transition';
 
 // React Scroll Lock (To lock scrolling when navbar is active)
 // 1. Import the functions
@@ -38,7 +36,8 @@ class NavBar extends Component {
       isActive: false,
       // Collapse menu
       open: false,
-      setOpen: false
+      // Transition
+      visibility: "hide"
     }
   }
 
@@ -81,13 +80,15 @@ class NavBar extends Component {
     this.setState({
       isActive: !this.state.isActive,
       open: !this.state.open,
-      setOpen: !this.state.setOpen
     })
+    // Lock page under menu & transition animation
     if (!this.state.open) {
-      this.showTargetElement();
+
+      this.setState({visibility: "show"});
     }
     else {
-      this.hideTargetElement();
+
+      this.setState({visibility: "hide"});
     }
   }
 
@@ -96,41 +97,6 @@ class NavBar extends Component {
       <>
       <nav id="main-navbar" className="navbar sticky-top">
         <div className="container">
-          <Collapse in={this.state.open}>
-            <div id="navbar-collapse">
-              <div className="py-5" >
-
-                  <div className="menu-items">
-                    <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1 " onClick={this.toggleButton}>
-                        <span id="who-link">Who</span>
-                        <span id="who-link-expanded">Who I Am</span>
-                    </NavLink>
-                  </div>
-                  <div className="sub-menu-items">
-                    <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                        <span>• Graphic Designer</span>
-                    </NavLink>
-                  </div>
-                  <div className="sub-menu-items">
-                    <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type" onClick={this.toggleButton}>
-                        <span>• Software Developer</span>
-                    </NavLink>
-                  </div>
-                  <div className="sub-menu-items">
-                    <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type" onClick={this.toggleButton}>
-                        <span>• Photographer</span>
-                    </NavLink>
-                  </div>
-                  <div className="menu-items">
-                    <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                        <span id="how-link">How</span>
-                        <span id="how-link-expanded">How To Contact Me</span>
-                    </NavLink>
-                  </div>
-
-              </div>
-            </div>
-          </Collapse>
           <div className="navbar_container">
             <span className="left-nav">
               <h1 id="nav-brand">CLT</h1>
@@ -143,6 +109,73 @@ class NavBar extends Component {
                 isActive={this.state.isActive}
               />
             </span>
+          </div>
+
+          <div id="flyoutMenu" className={this.state.visibility}>
+          <div className="container">
+            <div className="py-2 navbar_container">
+              <span className="left-nav">
+                <h1 id="nav-brand">CLT</h1>
+              </span>
+              <span className="right-nav">
+                <HamburgerSpin
+                  aria-controls="navbar-collapse"
+                  aria-expanded={this.state.open}
+                  toggleButton={this.toggleButton}
+                  isActive={this.state.isActive}
+                />
+              </span>
+            </div>
+
+            <div id="menu-container" className="py-2" >
+              <div className="menu-items">
+                <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1 " onClick={this.toggleButton}>
+                  <span id="who-link">Who</span>
+                  <span id="who-link-expanded">Who I Am</span>
+                </NavLink>
+              </div>
+              <div className="sub-menu-items">
+                <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1" onClick={this.toggleButton}>
+                  <span>• Graphic Designer</span>
+                </NavLink>
+              </div>
+              <div className="sub-menu-items">
+                <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type" onClick={this.toggleButton}>
+                  <span>• Software Developer</span>
+                </NavLink>
+              </div>
+              <div className="sub-menu-items">
+                <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type" onClick={this.toggleButton}>
+                    <span>• Photographer</span>
+                </NavLink>
+              </div>
+              <div className="menu-items">
+                <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
+                  <span id="how-link">How</span>
+                  <span id="how-link-expanded">How To Contact Me</span>
+                </NavLink>
+              </div>
+            </div>
+
+            <div>
+              <div className="p-1">
+                <a href="http://www.instagram.com/cesarsalaad" target="_blank">
+                  <InstagramIcon width={40} />
+                </a>
+              </div>
+              <div className="p-1">
+                <a href="#" target="_blank">
+                  <GithubIcon width={40} />
+                </a>
+              </div>
+              <div className="p-1">
+                <a href="#" target="_blank">
+                  <LinkedinIcon width={40} />
+                </a>
+              </div>
+            </div>
+          </div>
+
           </div>
         </div>
       </nav>

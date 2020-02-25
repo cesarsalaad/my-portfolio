@@ -1,3 +1,50 @@
+#menu-container {
+  /* overflow: auto; */
+  /* max-height: 80vh; */
+}
+
+#navbar-collapse {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(0, -120vh, 0);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+#flyoutMenu {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform .3s
+              cubic-bezier(0, .52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+  -moz-box-shadow: 0px 2px 0.5em 1em rgb(0, 0, 0);
+  -webkit-box-shadow: 0px 2px 0.5em 1em rgb(0, 0, 0);
+  box-shadow: 0px 2px 0.5em 1em
+}
+
+#flyoutMenu.hide {
+  transform: translate3d(0, -120vh, 0);
+}
+
+#flyoutMenu.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+
+#flyoutMenu h2 a {
+  color: #333;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+
 a:link {
   text-decoration: none;
 }
@@ -21,15 +68,30 @@ a:link {
 
 a #who-link-expanded { display: none; }
 a:hover #who-link { display: none; }
-a:hover #who-link-expanded { display: inline; }
+a:hover #who-link-expanded {
+  display: inline;/* transition timing */
+  transition: all .5s;
+}
 a.is-active #who-link { display: none; }
-a.is-active #who-link-expanded { display: inline; }
+a.is-active #who-link-expanded {
+  display: inline;
+  /* transition timing */
+    transition: all .5s;
+}
 
 a #how-link-expanded { display: none; }
 a:hover #how-link { display: none; }
-a:hover #how-link-expanded { display: inline; }
+a:hover #how-link-expanded {
+  display: inline;
+  /* transition timing */
+    transition: all .5s;
+}
 a.is-active #how-link { display: none; }
-a.is-active #how-link-expanded { display: inline; }
+a.is-active #how-link-expanded {
+  display: inline;
+  /* transition timing */
+    transition: all .5s;
+}
 
 @supports (-webkit-text-stroke: 1px gray) {
   .nav-outline-type {
@@ -44,7 +106,8 @@ a.is-active #how-link-expanded { display: inline; }
   .nav-outline-type:hover {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: white;
-
+    /* transition timing */
+      transition: all .5s;
   }
 }
 
@@ -55,7 +118,7 @@ background-color: white;
 box-shadow: 0px 2px 0.5em 1em rgb(255, 255, 255);
 background-color: white;
 /* transition timing */
-  transition: all .5s;
+  transition: all 1s;
 }
 
 .left-nav {
