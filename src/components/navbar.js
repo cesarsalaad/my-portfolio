@@ -49,7 +49,7 @@ class NavBar extends Component {
     // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
     // Specifically, the target element is the one we would like to allow scroll on (NOT a parent of that element).
     // This is also the element to apply the CSS '-webkit-overflow-scrolling: touch;' if desired.
-    this.targetElement = document.querySelector('#main-navbar');
+    this.targetElement = document.querySelector('#menu-container');
   }
 
   showTargetElement = () => {
@@ -83,11 +83,11 @@ class NavBar extends Component {
     })
     // Lock page under menu & transition animation
     if (!this.state.open) {
-
+      this.showTargetElement();
       this.setState({visibility: "show"});
     }
     else {
-
+      this.hideTargetElement();
       this.setState({visibility: "hide"});
     }
   }
@@ -95,25 +95,11 @@ class NavBar extends Component {
   render() {
     return (
       <>
-      <nav id="main-navbar" className="navbar sticky-top">
-        <div className="container">
-          <div className="navbar_container">
-            <span className="left-nav">
-              <h1 id="nav-brand">CLT</h1>
-            </span>
-            <span className="right-nav">
-              <HamburgerSpin
-                aria-controls="navbar-collapse"
-                aria-expanded={this.state.open}
-                toggleButton={this.toggleButton}
-                isActive={this.state.isActive}
-              />
-            </span>
-          </div>
 
-          <div id="flyoutMenu" className={this.state.visibility}>
+
+        <nav id="main-navbar" className="navbar sticky-top">
           <div className="container">
-            <div className="py-2 navbar_container">
+            <div className="navbar_container">
               <span className="left-nav">
                 <h1 id="nav-brand">CLT</h1>
               </span>
@@ -126,59 +112,65 @@ class NavBar extends Component {
                 />
               </span>
             </div>
-
-            <div id="menu-container" className="py-2" >
-              <div className="menu-items">
-                <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1 " onClick={this.toggleButton}>
-                  <span id="who-link">Who</span>
-                  <span id="who-link-expanded">Who I Am</span>
-                </NavLink>
-              </div>
-              <div className="sub-menu-items">
-                <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                  <span>• Graphic Designer</span>
-                </NavLink>
-              </div>
-              <div className="sub-menu-items">
-                <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type" onClick={this.toggleButton}>
-                  <span>• Software Developer</span>
-                </NavLink>
-              </div>
-              <div className="sub-menu-items">
-                <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type" onClick={this.toggleButton}>
-                    <span>• Photographer</span>
-                </NavLink>
-              </div>
-              <div className="menu-items">
-                <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                  <span id="how-link">How</span>
-                  <span id="how-link-expanded">How To Contact Me</span>
-                </NavLink>
-              </div>
-            </div>
-
-            <div>
-              <div className="p-1">
-                <a href="http://www.instagram.com/cesarsalaad" target="_blank">
-                  <InstagramIcon width={40} />
-                </a>
-              </div>
-              <div className="p-1">
-                <a href="#" target="_blank">
-                  <GithubIcon width={40} />
-                </a>
-              </div>
-              <div className="p-1">
-                <a href="#" target="_blank">
-                  <LinkedinIcon width={40} />
-                </a>
-              </div>
-            </div>
           </div>
+        </nav>
+
+
+        <div id="flyoutMenu" className={this.state.visibility}>
+          <div id="menu-container" className="d-flex align-items-center flex-wrap container">
+
+              <div className="flex-grow-1 py-2" >
+                <div className="menu-items">
+                  <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1 " onClick={this.toggleButton}>
+                    <span id="who-link">Who</span>
+                    <span id="who-link-expanded">Who I Am</span>
+                  </NavLink>
+                </div>
+                <div className="sub-menu-items">
+                  <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1" onClick={this.toggleButton}>
+                    <span>• Graphic Designer</span>
+                  </NavLink>
+                </div>
+                <div className="sub-menu-items">
+                  <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type" onClick={this.toggleButton}>
+                    <span>• Software Developer</span>
+                  </NavLink>
+                </div>
+                <div className="sub-menu-items">
+                  <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type" onClick={this.toggleButton}>
+                      <span>• Photographer</span>
+                  </NavLink>
+                </div>
+                <div className="menu-items">
+                  <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
+                    <span id="how-link">How</span>
+                    <span id="how-link-expanded">How To Contact Me</span>
+                  </NavLink>
+                </div>
+              </div>
+
+              <div>
+                <div className="p-1">
+                  <a href="http://www.instagram.com/cesarsalaad" target="_blank">
+                    <InstagramIcon width={40} />
+                  </a>
+                </div>
+                <div className="p-1">
+                  <a href="https://github.com/clutesen" target="_blank">
+                    <GithubIcon width={40} />
+                  </a>
+                </div>
+                <div className="p-1">
+                  <a href="https://www.linkedin.com/in/cesar-tesen-797078bb/" target="_blank">
+                    <LinkedinIcon width={40} />
+                  </a>
+                </div>
+              </div>
 
           </div>
         </div>
-      </nav>
+
+
           <Switch>
             <Route exact path="/" component={Who}/>
             <Route path="/GraphicDesign" component={GraphicDesign}/>

@@ -1,6 +1,6 @@
 #menu-container {
-  /* overflow: auto; */
-  /* max-height: 80vh; */
+  overflow: auto;
+  height: 80vh;
 }
 
 #navbar-collapse {
@@ -20,7 +20,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform .3s
+  padding-top: 100px;
+  transition: transform 1s
               cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
   z-index: 1000;
