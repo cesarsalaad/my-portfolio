@@ -16,11 +16,11 @@ import LinkedinIcon from "./icons/linkedin";
 // Custom Styles import
 import '../css/navbar.css';
 
+// Reveal Text Animation
+import Slide from 'react-reveal/Slide';
+
 // Burger Menu
 import { HamburgerSpin } from 'react-animated-burgers'
-
-// React Page Transition
-import { PageTransition } from '@steveeeie/react-page-transition';
 
 // React Scroll Lock (To lock scrolling when navbar is active)
 // 1. Import the functions
@@ -120,52 +120,58 @@ class NavBar extends Component {
           <div id="menu-container" className="d-flex align-items-center flex-wrap container">
 
               <div className="flex-grow-1 py-2" >
-                <div className="menu-items">
-                  <NavLink activeClassName="is-active" exact to='/' className="nav-outline-type Display-1 " onClick={this.toggleButton}>
-                    <span id="who-link">Who</span>
-                    <span id="who-link-expanded">Who I Am</span>
-                  </NavLink>
-                </div>
-                <div className="sub-menu-items">
-                  <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                    <span>• Graphic Designer</span>
-                  </NavLink>
-                </div>
-                <div className="sub-menu-items">
-                  <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="nav-outline-type" onClick={this.toggleButton}>
-                    <span>• Software Developer</span>
-                  </NavLink>
-                </div>
-                <div className="sub-menu-items">
-                  <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="nav-outline-type" onClick={this.toggleButton}>
-                      <span>• Photographer</span>
-                  </NavLink>
-                </div>
-                <div className="menu-items">
-                  <NavLink activeClassName='is-active' id="how-link" to='/How' className="nav-outline-type Display-1" onClick={this.toggleButton}>
-                    <span id="how-link">How</span>
-                    <span id="how-link-expanded">How To Contact Me</span>
-                  </NavLink>
-                </div>
+              <Slide left cascade when={this.state.open}>
+                <ul>
+                  <li>
+                    <NavLink activeClassName="is-active" exact to='/' className="menu-items nav-outline-type Display-1 " onClick={this.toggleButton}>
+                      <span id="who-link">Who</span>
+                      <span id="who-link-expanded">Who I Am</span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink activeClassName="is-active" id="gd-link" to='/GraphicDesign' className="sub-menu-items nav-outline-type Display-1" onClick={this.toggleButton}>
+                      <span>• Graphic Designer</span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink activeClassName="is-active" id="sw-link" to='/Software' className="sub-menu-items nav-outline-type" onClick={this.toggleButton}>
+                      <span>• Software Developer</span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink activeClassName='is-active' id="p-link" to='/Photography' className="sub-menu-items nav-outline-type" onClick={this.toggleButton}>
+                        <span>• Photographer</span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink activeClassName='is-active' id="how-link" to='/How' className="sub-menu-items nav-outline-type Display-1" onClick={this.toggleButton}>
+                      <span id="how-link">How</span>
+                      <span id="how-link-expanded">How To Contact Me</span>
+                    </NavLink>
+                  </li>
+                </ul>
+              </Slide>
               </div>
 
-              <div>
-                <div className="p-1">
-                  <a href="http://www.instagram.com/cesarsalaad" target="_blank">
-                    <InstagramIcon width={40} />
-                  </a>
+              <Slide right cascade when={this.state.open}>
+                <div>
+                  <div className="p-1">
+                    <a href="http://www.instagram.com/cesarsalaad" target="_blank">
+                      <InstagramIcon width={40} />
+                    </a>
+                  </div>
+                  <div className="p-1">
+                    <a href="https://github.com/clutesen" target="_blank">
+                      <GithubIcon width={40} />
+                    </a>
+                  </div>
+                  <div className="p-1">
+                    <a href="https://www.linkedin.com/in/cesar-tesen-797078bb/" target="_blank">
+                      <LinkedinIcon width={40} />
+                    </a>
+                  </div>
                 </div>
-                <div className="p-1">
-                  <a href="https://github.com/clutesen" target="_blank">
-                    <GithubIcon width={40} />
-                  </a>
-                </div>
-                <div className="p-1">
-                  <a href="https://www.linkedin.com/in/cesar-tesen-797078bb/" target="_blank">
-                    <LinkedinIcon width={40} />
-                  </a>
-                </div>
-              </div>
+              </Slide>
 
           </div>
         </div>

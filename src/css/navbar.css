@@ -154,3 +154,9 @@ div.navbar_container span {
   margin: 0 auto;
   padding: 1.5em;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
