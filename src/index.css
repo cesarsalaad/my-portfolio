@@ -1,12 +1,23 @@
-#lottie-wrapper {
+#lottie-baseball-wrapper {
   width: 100%;
   height: 150vh;
+}
+
+#lottie-shpe-wrapper {
+  width: 100%;
+  height: 150vh;
+}
+
+#lottie-novi-wrapper {
+  width: 100%;
+  height: 150vh;
+
 }
 
 #bodymovin {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 30vh;
+  top: 20vh;
 }
 
 .medium-lottie {

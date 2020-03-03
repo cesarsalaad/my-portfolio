@@ -24,7 +24,7 @@ class Software extends Component {
     window.addEventListener('scroll', this.handleScroll);
 
     this.elem = document.getElementById('bodymovin')
-    this.elem_wrapper = document.getElementById('lottie-wrapper')
+    this.elem_wrapper = document.getElementById('lottie-novi-wrapper')
     this.nav_offset = document.getElementById('main-navbar')
 
     this.anim = lottie.loadAnimation({
@@ -105,12 +105,12 @@ class Software extends Component {
             thumbnail: "https://live.staticflickr.com/65535/49429878607_45cc46633c.jpg",
             thumbnailWidth: 400,
             thumbnailHeight: 200,
-            caption: "Explore Mavodatopmp Example"
+            caption: "Explore Navigation Example"
     }]
     return (
       <>
         <body>
-          <div id="lottie-wrapper">
+          <div id="lottie-novi-wrapper">
             <h1 className="display-2 text-center">Software</h1>
             <h3 className="text-center">These are my software projects, behold.</h3>
             <div id="bodymovin" className="medium-lottie"></div>
