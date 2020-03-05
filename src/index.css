@@ -17,7 +17,7 @@
 #bodymovin {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 20vh;
+  top: 10vh;
 }
 
 .medium-lottie {

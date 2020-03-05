@@ -77,35 +77,37 @@ class GDathletics extends Component {
 
       // calculate the percentage the user has scrolled down the page
 
-      // element.offsetBottom = element.offsetTop + element.offsetHeight
-      // Bottom of page position in px
-      var offsetBottom = this.elem_wrapper.offsetTop + this.elem_wrapper.offsetHeight - this.nav_offset.offsetHeight
+      // Bottom of wrapper - Height of Nav - Height of Wrapper
+      var wrapperStart =  this.elem_wrapper.offsetTop
+
+      var wrapperEnd = this.elem_wrapper.offsetHeight + this.elem_wrapper.offsetTop
 
       // window.pageYOffset = A floating-point number specifying the number of pixels the Document is scrolled vertically within its containing Window. This number is subpixel precise, so it may not be an integer. A value of 0.0 indicates that the window is not scrolled vertically, and that the top of the document is located at the top edge of the window's content area.
-      var numPixelsScrolled = window.pageYOffset;
 
-      // is a measurement which includes the element borders, the element vertical padding, the element horizontal scrollbar (if present, if rendered) and the element CSS height.
-      var offsetHeight = window.document.body.offsetHeight- this.nav_offset.offsetHeight;
+      // Pixels scrolled - Top of wrapper = Starting point for the animation
+      var numPixelsScrolledInRegion = parseFloat(window.pageYOffset)-wrapperStart;
 
-      // returns the inner height of an element in pixels, including padding but not the horizontal scrollbar height, border, or margin
-      var clientHeight = document.documentElement.clientHeight;
-
-      var scrollPercent = 100 * numPixelsScrolled / (offsetBottom-clientHeight);
+      var scrollPercent = (100 * numPixelsScrolledInRegion)/(wrapperEnd-wrapperStart);
 
       var scrollPercentRounded = Math.round(scrollPercent);
 
-      var scrollToParam = ( (scrollPercentRounded / 100) * (this.anim.totalFrames));
+      // Using pixel position from numPixelsScrolledInRegion to directly determine current frame
+      var scrollToParam = ((scrollPercentRounded / 100) * (this.anim.totalFrames));
+
+      // Ugly print statements for testing purposes :)
+      var numPixelsScrolled = window.pageYOffset;
 
       console.log("\nnumPixelsScrolled: ", numPixelsScrolled);
+      console.log("numPixelsScrolledInRegion: ", numPixelsScrolledInRegion);
       console.log("Document Offset: " ,window.document.body.offsetHeight);
-      console.log("Offset Bottom: ", parseFloat(offsetBottom));
+      console.log("Wrapper Top: ", parseFloat(wrapperStart));
+      console.log("Wrapper Bottom: ", parseFloat(wrapperEnd));
       console.log("Scroll % Rounded: " , scrollPercentRounded);
       console.log("Frame rate: ", (this.anim.frameRate));
       console.log("Total Frames: ", (this.anim.totalFrames));
-      console.log("Current Frame: ", (scrollToParam));
 
-      if(scrollToParam<600){
-        this.anim.goToAndStop(scrollToParam-1, true)
+      if((numPixelsScrolledInRegion<600)){
+        this.anim.goToAndStop(numPixelsScrolledInRegion-1, true)
       }
   };
 
@@ -113,7 +115,7 @@ class GDathletics extends Component {
     return (
       <>
         <body>
-        <h1 className="display-2 text-center">Software</h1>
+        <h1 className="display-3 text-center">Santa Clara University Athletics</h1>
         <h3 className="text-center">These are some of my favorite projects over the years.</h3>
 
           <div id="lottie-baseball-wrapper">
@@ -123,7 +125,7 @@ class GDathletics extends Component {
           <div className="container-sm">
             <section>
               <h1 className="display-3">
-                Notes Organizer for the Visually Impaired
+                Trading Cards
               </h1>
 
               <div className="py-5">
@@ -131,11 +133,7 @@ class GDathletics extends Component {
                   Project Details:
                 </h3>
                 <p className="lead">
-                  <b>Duration:</b> 1 year <br/>
-                  <b>Roles:</b> UI Designer, iOS Developer <br/>
-                  <b>Tools Used:</b> XCode, Git, Adobe XD, Adobe Illustrator <br/>
-                  <b>Tested on:</b> iPhone 8 Plus & iPhone X <br/>
-                  <b>Teammates:</b> Axel Perez <br/>
+                  Started off as a cool giveaway to commemorate seniors in a timeless manner. I continued to make these for other sports.
                 </p>
               </div>
             </section>
