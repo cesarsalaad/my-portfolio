@@ -1,6 +1,11 @@
-#lottie-baseball-wrapper {
+#trading_card_wrapper {
   width: 100%;
-  height: 150vh;
+  height: 200vh;
+}
+
+#basketball_program_wrapper {
+  width: 100%;
+  height: 200vh;
 }
 
 #lottie-shpe-wrapper {
@@ -14,15 +19,16 @@
 
 }
 
-#bodymovin {
+#basketball_program {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 10vh;
 }
 
-.medium-lottie {
-  width: 50%;
-  margin: auto;
+#trading_card {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 10vh;
 }
 
 p {
