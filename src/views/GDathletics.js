@@ -23,7 +23,7 @@ import LottieSection from "../components/lottieSection"
 //   }
 
 import TradingCardData from '../lotties/trading_card.json'
-import BasketballProgramData from '../lotties/basketball_program.json'
+
 
 class GDathletics extends Component {
 
@@ -52,7 +52,7 @@ class GDathletics extends Component {
             </section>
           </div>
 
-          <LottieSection lottieName="basketball_program" lottieWrapperName="basketball_program_wrapper" jsonFile={BasketballProgramData}/>
+        
           <div className="container-sm">
             <section>
               <h1 className="display-3">
