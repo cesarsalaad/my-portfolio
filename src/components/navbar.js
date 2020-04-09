@@ -95,23 +95,19 @@ class NavBar extends Component {
   render() {
     return (
       <>
-
-
         <nav id="main-navbar" className="navbar sticky-top">
-          <div className="container">
-            <div className="navbar_container">
-              <span className="left-nav">
-                <h1 id="nav-brand">CLT</h1>
-              </span>
-              <span className="right-nav">
-                <HamburgerSpin
-                  aria-controls="navbar-collapse"
-                  aria-expanded={this.state.open}
-                  toggleButton={this.toggleButton}
-                  isActive={this.state.isActive}
-                />
-              </span>
-            </div>
+          <div className="navbar_container container">
+            <span className="left-nav">
+              <h1 id="nav-brand">CLT</h1>
+            </span>
+            <span className="right-nav">
+              <HamburgerSpin
+                aria-controls="navbar-collapse"
+                aria-expanded={this.state.open}
+                toggleButton={this.toggleButton}
+                isActive={this.state.isActive}
+              />
+            </span>
           </div>
         </nav>
 
@@ -156,17 +152,17 @@ class NavBar extends Component {
               <Slide right cascade when={this.state.open}>
                 <div>
                   <div className="p-1">
-                    <a href="http://www.instagram.com/cesarsalaad" target="_blank">
+                    <a href="http://www.instagram.com/cesarsalaad">
                       <InstagramIcon width={40} />
                     </a>
                   </div>
                   <div className="p-1">
-                    <a href="https://github.com/clutesen" target="_blank">
+                    <a href="https://github.com/clutesen">
                       <GithubIcon width={40} />
                     </a>
                   </div>
                   <div className="p-1">
-                    <a href="https://www.linkedin.com/in/cesar-tesen-797078bb/" target="_blank">
+                    <a href="https://www.linkedin.com/in/cesar-tesen-797078bb/">
                       <LinkedinIcon width={40} />
                     </a>
                   </div>
