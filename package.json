@@ -4,32 +4,55 @@
   "private": true,
   "homepage": "http://clutesen.github.io/my-portfolio",
   "dependencies": {
-    "@dotlottie/player-component": "^0.1.1",
-    "@fortawesome/fontawesome-free": "^5.12.1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
+    "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
-    "@types/react-transition-group": "^4.2.4",
-d    "ootstrap": ": "^1.0.0-beta.17",
+    "@types/react-transition-group": "^4.2.3",
+    "body-scroll-lock": "^2.6.4",
+    "bootstrap": "^4.4.1",
+    "gh-pages": "^2.2.0",
+    "gsap": "^3.1.1",
+    "lottie-web": "^5.6.3",
+    "react": "^16.12.0",
+    "react-animated-burgers": "^1.2.7",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-burger-menu": "^2.6.13",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.12.0",
     "react-grid-gallery": "^0.5.5",
     "react-reveal": "^1.2.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-s    "redeploy": "npersion"
+    "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^2.5.1",
-    "terser": "^3.17.0"
+    "terser": "^3.14.1"
   }
 }
