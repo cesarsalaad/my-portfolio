@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.a73cde69.chunk.css",
-    "main.js": "/my-portfolio/static/js/main.a1490c88.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.a1490c88.chunk.js.map",
+    "main.css": "/my-portfolio/static/css/main.a250d1b0.chunk.css",
+    "main.js": "/my-portfolio/static/js/main.a3790b9d.chunk.js",
+    "main.js.map": "/my-portfolio/static/js/main.a3790b9d.chunk.js.map",
     "runtime-main.js": "/my-portfolio/static/js/runtime-main.f13b90e6.js",
     "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.f13b90e6.js.map",
-    "static/css/2.f599dd6e.chunk.css": "/my-portfolio/static/css/2.f599dd6e.chunk.css",
-    "static/js/2.878dfa23.chunk.js": "/my-portfolio/static/js/2.878dfa23.chunk.js",
-    "static/js/2.878dfa23.chunk.js.map": "/my-portfolio/static/js/2.878dfa23.chunk.js.map",
+    "static/css/2.739d7efd.chunk.css": "/my-portfolio/static/css/2.739d7efd.chunk.css",
+    "static/js/2.4a8dd930.chunk.js": "/my-portfolio/static/js/2.4a8dd930.chunk.js",
+    "static/js/2.4a8dd930.chunk.js.map": "/my-portfolio/static/js/2.4a8dd930.chunk.js.map",
     "index.html": "/my-portfolio/index.html",
-    "precache-manifest.146e872e42bf29a02c208cfdeb9af68c.js": "/my-portfolio/precache-manifest.146e872e42bf29a02c208cfdeb9af68c.js",
+    "precache-manifest.76eabf6e71b02d7b53966a59428d10dc.js": "/my-portfolio/precache-manifest.76eabf6e71b02d7b53966a59428d10dc.js",
     "service-worker.js": "/my-portfolio/service-worker.js",
-    "static/css/2.f599dd6e.chunk.css.map": "/my-portfolio/static/css/2.f599dd6e.chunk.css.map",
-    "static/css/main.a73cde69.chunk.css.map": "/my-portfolio/static/css/main.a73cde69.chunk.css.map",
-    "static/js/2.878dfa23.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.878dfa23.chunk.js.LICENSE.txt",
+    "static/css/2.739d7efd.chunk.css.map": "/my-portfolio/static/css/2.739d7efd.chunk.css.map",
+    "static/css/main.a250d1b0.chunk.css.map": "/my-portfolio/static/css/main.a250d1b0.chunk.css.map",
+    "static/js/2.4a8dd930.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.4a8dd930.chunk.js.LICENSE.txt",
     "static/media/latofonts.css": "/my-portfolio/static/media/Lato-ThinItalic.880cffe4.woff2",
     "static/media/source-sans-pro.css": "/my-portfolio/static/media/SourceSansPro-SemiboldIt.ttf.c474abd9.woff2",
     "static/media/source-sans-variable.css": "/my-portfolio/static/media/SourceSansVariable-Roman.ttf.b8a6066b.woff",
-    "static/media/all.min.css": "/my-portfolio/static/media/fa-solid-900.f6121be5.woff2"
+    "static/media/all.min.css": "/my-portfolio/static/media/fa-solid-900.cdfec5cf.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.f13b90e6.js",
-    "static/css/2.f599dd6e.chunk.css",
-    "static/js/2.878dfa23.chunk.js",
-    "static/css/main.a73cde69.chunk.css",
-    "static/js/main.a1490c88.chunk.js"
+    "static/css/2.739d7efd.chunk.css",
+    "static/js/2.4a8dd930.chunk.js",
+    "static/css/main.a250d1b0.chunk.css",
+    "static/js/main.a3790b9d.chunk.js"
   ]
 }
